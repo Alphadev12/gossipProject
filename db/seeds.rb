@@ -49,3 +49,15 @@
 # 	gossip.user = users[rand(9)]
 # 	gossip.save
 # end
+
+# Création de 10 tags
+# 10.times do
+# 	tag = Tag.create(title: Faker::Internet.slug)
+# end
+
+# tags = Tag.all
+# gossips = Gossip.all
+
+# 20.times do |i|
+# 	tg = TagGossip.create(tag: tags[rand(9)], gossip: gossips[i])
+# end
