@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+# 10 utilisateurs en base avec Faker.
+# 10.times do 
+# 	user = User.create(
+# 		first_name: Faker::Name.first_name, 
+# 		last_name: Faker::Name.first_name, 
+# 		description: Faker::Lorem.words(number: 30),
+# 		email: Faker::Internet,
+# 		age: Faker::Number.between(from: 18, to: 80)
+# 	)
+# end
