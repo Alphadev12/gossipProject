@@ -7,13 +7,33 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# 10 utilisateurs en base avec Faker.
-# 10.times do 
-# 	user = User.create(
-# 		first_name: Faker::Name.first_name, 
-# 		last_name: Faker::Name.first_name, 
-# 		description: Faker::Lorem.words(number: 30),
-# 		email: Faker::Internet,
-# 		age: Faker::Number.between(from: 18, to: 80)
+
+# 10 villes en base avec Faker
+# 10.times do
+# 	city = City.create(
+# 		name: Faker::Nation.capital_city,
+# 		zip_code: Faker::Address.zip_code
 # 	)
+# end
+
+# 10 utilisateurs en base avec Faker.
+cities = City.all
+10.times do 
+	user = User.new(
+		first_name: Faker::Name.first_name, 
+		last_name: Faker::Name.first_name, 
+		description: Faker::Lorem.words(number: 30),
+		email: Faker::Internet,
+		age: Faker::Number.between(from: 18, to: 80)
+	)
+
+	user.city = cities[rand(9)]
+	user.save
+end
+
+# Lier avec les utilisateurs du seed.
+# cities = City.all
+# users = User.all
+# users.each do |user|
+# 	user.city = cities[rand(10)]
 # end
